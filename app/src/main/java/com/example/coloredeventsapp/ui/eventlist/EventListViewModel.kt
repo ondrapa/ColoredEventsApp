@@ -29,7 +29,7 @@ class EventListViewModel @Inject constructor(
                 sendUiEvent(UiEvent.Navigate(Routes.ADD_EDIT_EVENT))
             }
             is EventListEvent.OnEventClick -> {
-                sendUiEvent(UiEvent.Navigate(Routes.ADD_EDIT_EVENT + "?eventId=${event.event.id}"))
+                sendUiEvent(UiEvent.Navigate(Routes.ADD_EDIT_EVENT + "?eventId=${event.event.id}&eventColor=${event.event.color}"))
             }
             is EventListEvent.OnDeleteEvent -> {
                 viewModelScope.launch {

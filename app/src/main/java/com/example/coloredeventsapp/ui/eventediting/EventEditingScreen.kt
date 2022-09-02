@@ -40,7 +40,9 @@ fun EventEditingScreen(
     val scaffoldState = rememberScaffoldState()
 
     val eventBackgroundAnimatable = remember {
-        Animatable(if (eventColor != -1) Color(eventColor) else Color(viewModel.color))
+        Animatable(
+            Color(if (eventColor == -1) viewModel.color else eventColor)
+        )
     }
     val scope = rememberCoroutineScope()
 
