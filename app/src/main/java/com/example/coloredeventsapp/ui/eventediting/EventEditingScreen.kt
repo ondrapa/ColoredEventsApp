@@ -39,7 +39,7 @@ fun EventEditingScreen(
 ) {
     val scaffoldState = rememberScaffoldState()
 
-    val eventBackgroudAnimatable = remember {
+    val eventBackgroundAnimatable = remember {
         Animatable(if (eventColor != -1) Color(eventColor) else Color(viewModel.color))
     }
     val scope = rememberCoroutineScope()
@@ -77,7 +77,7 @@ fun EventEditingScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(color = eventBackgroudAnimatable.value),
+                .background(color = eventBackgroundAnimatable.value),
             horizontalAlignment = Alignment.CenterHorizontally
         ) { /*
             Box(
@@ -155,7 +155,7 @@ fun EventEditingScreen(
                             )
                             .clickable {
                                 scope.launch {
-                                    eventBackgroudAnimatable.animateTo(
+                                    eventBackgroundAnimatable.animateTo(
                                         targetValue = Color(colorInt),
                                         animationSpec = tween(
                                             durationMillis = 550

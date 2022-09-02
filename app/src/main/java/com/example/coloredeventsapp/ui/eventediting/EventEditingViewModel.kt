@@ -111,6 +111,7 @@ class EventEditingViewModel @Inject constructor(
                             title = title,
                             color = color,
                             description = description,
+                            id = eventA?.id
                             // image = image.toString()
                         )
                     )
